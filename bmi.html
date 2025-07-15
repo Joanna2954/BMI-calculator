@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+button{
+    color: rgb(235, 232, 233);
+    background-color: rgb(216, 40, 128);
+    margin-left: 250px;
+    margin-top: 70px;
+    height: 30px;
+    width: 90px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: rgba(235, 13, 139, 0.2) 0px 7px 29px 0px;
+}
+.dt{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: auto;
+    height: 420px;
+    width: 590px;
+    border: 2px  rgb(163, 48, 102);
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20250205/pngtree-soft-pastel-floral-design-light-blue-background-image_16896113.jpg");
+box-shadow: rgba(176, 11, 90, 0.637) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;;
+}
+h2{
+    margin-left: 220px;
+    padding-top: 20px;
+    font-style: oblique;
+}
+h4{
+    margin-left: 190px;
+    margin-top: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.gy{
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+    height: 30px;
+    margin-top: 50px;
+
+}
+input:hover{
+color: rgb(255, 249, 249);
+background-color: rgb(205, 113, 166);
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+
+}
+button:hover{
+    background-color: aqua;
+    color: black;
+}
+label{
+    font-style: italic;
+}
+input{
+    border-radius: 5px;
+    border: none;
+    box-shadow:  rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+}
+h3{
+    margin-left: 250px;
+}
+
+</style>
+<body>
+
+    <div class="dt">
+    <h2>BMI calculator</h2>
+    <div class="gy">
+    <label for="Height">Height:</label>
+    <input type="text" id="res">
+<label for="Weight">Weight:</label>
+<input type="text" id="res1"><br><br>
+</div>
+<button onclick="tet()">Calculate</button>
+
+<h4 id="rest"></h4>
+
+
+<h3 id="rest1"  ></h3>
+</div>
+    
+
+
+
+<script>
+
+    function tet(){
+        let a =document.getElementById("res").value
+        console.log(a);
+
+        let b = document.getElementById("res1").value
+        console.log(b);
+     let a2=a/100
+        let c =b/(a2*a2)
+        let d=c.toFixed(2)
+        console.log(d);
+
+    
+
+        let result=document.getElementById("rest").textContent=`Your BMI Calculation is ${d}`
+        console.log(result);
+        function wey(){
+        if (d < 18.5) {
+        return "Underweight";
+    } else if (d >= 18.5 && d < 25.0) {
+        return "Normal Weight";
+    } else if (d>= 25.0 && d < 30.0) {
+        return "Overweight";
+    } else { 
+    
+         return "Obese"; 
+     } 
+
+    }
+    document.getElementById("rest1").innerHTML=wey();
+        
+    }
+
+</script>
+</body>
+</html>
